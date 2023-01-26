@@ -1,13 +1,15 @@
 About r-spatstat.random
 =======================
 
-Home: http://spatstat.org/
+Home: https://spatstat.org/
 
 Package license: GPL-2.0-or-later
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-spatstat.random-feedstock/blob/main/LICENSE.txt)
 
 Summary: Functionality for random generation of spatial data in the 'spatstat' family of packages. Generates random spatial patterns of points according to many simple rules (complete spatial randomness, Poisson, binomial, random grid, systematic, cell), randomised alteration of patterns (thinning, random shift, jittering),  simulated realisations of random point processes (simple sequential inhibition, Matern inhibition models, Matern cluster process, Neyman-Scott cluster processes, log-Gaussian Cox processes, product shot noise cluster processes) and simulation of Gibbs point processes (Metropolis-Hastings birth-death-shift algorithm, alternating Gibbs sampler). Also generates random spatial patterns of line segments, random tessellations, and random images (random noise, random mosaics). Excludes random generation on a linear network, which is covered by the separate package 'spatstat.linnet'.
+
+Development: https://github.com/spatstat/spatstat.random
 
 Current build status
 ====================

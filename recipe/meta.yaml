@@ -1,4 +1,4 @@
-{% set version = "3.0-1" %}
+{% set version = "3.1-3" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,7 +10,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/spatstat.random_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/spatstat.random/spatstat.random_{{ version }}.tar.gz
-  sha256: 938c845c063b8781bf894c0a67537e7b2a7c425a4beba4a95ec9d2c37b43e5b6
+  sha256: b28af559ca28002abf9c937b68ad5e7f7317d8c3f976e9a97bebe0c652c441d0
 
 build:
   merge_build_host: true  # [win]
@@ -38,13 +38,13 @@ requirements:
   host:
     - r-base
     - r-spatstat.data >=3.0
-    - r-spatstat.geom >=3.0
+    - r-spatstat.geom >=3.0_5
     - r-spatstat.utils >=3.0
   run:
     - r-base
     - {{ native }}gcc-libs         # [win]
     - r-spatstat.data >=3.0
-    - r-spatstat.geom >=3.0
+    - r-spatstat.geom >=3.0_5
     - r-spatstat.utils >=3.0
 
 test:
@@ -53,7 +53,8 @@ test:
     - "\"%R%\" -e \"library('spatstat.random')\""  # [win]
 
 about:
-  home: http://spatstat.org/
+  home: https://spatstat.org/
+  dev_url: https://github.com/spatstat/spatstat.random
   license: GPL-2.0-or-later
   summary: Functionality for random generation of spatial data in the 'spatstat' family of packages. Generates random spatial patterns of points according to many simple rules (complete spatial randomness, Poisson, binomial, random grid, systematic, cell), randomised alteration of patterns (thinning, random shift, jittering),  simulated
     realisations of random point processes (simple sequential inhibition, Matern inhibition models, Matern cluster process, Neyman-Scott cluster processes, log-Gaussian Cox processes, product shot noise cluster processes) and simulation of Gibbs point processes (Metropolis-Hastings birth-death-shift algorithm, alternating
