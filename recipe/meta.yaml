@@ -1,6 +1,5 @@
 {% set version = "3.2-3" %}
 {% set posix = 'm2-' if win else '' %}
-{% set native = 'm2w64-' if win else '' %}
 
 package:
   name: r-spatstat.random
@@ -13,8 +12,7 @@ source:
   sha256: e052a33e90b097bc160c687d4927e17d01a1c282f503205d322133464f3934a7
 
 build:
-  merge_build_host: true  # [win]
-  number: 0
+  number: 1
   rpaths:
     - lib/R/lib/
     - lib/
@@ -26,7 +24,9 @@ requirements:
     - r-spatstat.utils           # [build_platform != target_platform]
     - r-spatstat.geom            # [build_platform != target_platform]
     - {{ compiler('c') }}              # [not win]
+    - {{ stdlib("c") }}                # [not win]
     - {{ compiler('m2w64_c') }}        # [win]
+    - {{ stdlib("m2w64_c") }}          # [win]
     - {{ compiler('cxx') }}            # [not win]
     - {{ compiler('m2w64_cxx') }}      # [win]
     - {{ posix }}filesystem        # [win]
@@ -42,7 +42,6 @@ requirements:
     - r-spatstat.utils >=3.0_2
   run:
     - r-base
-    - {{ native }}gcc-libs         # [win]
     - r-spatstat.data >=3.0
     - r-spatstat.geom >=3.2_9
     - r-spatstat.utils >=3.0_2
