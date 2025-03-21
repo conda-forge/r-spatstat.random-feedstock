@@ -25,8 +25,9 @@ requirements:
   build:
     - cross-r-base {{ r_base }}    # [build_platform != target_platform]
     - r-spatstat.data              # [build_platform != target_platform]
-    - r-spatstat.utils             # [build_platform != target_platform]
     - r-spatstat.geom              # [build_platform != target_platform]
+    - r-spatstat.univar            # [build_platform != target_platform]
+    - r-spatstat.utils             # [build_platform != target_platform]
     - {{ compiler('c') }}          # [not win]
     - {{ stdlib("c") }}            # [not win]
     - {{ compiler('m2w64_c') }}    # [win]
@@ -41,15 +42,15 @@ requirements:
   host:
     - r-base
     - r-spatstat.data >=3.1
-    - r-spatstat.geom >=3.3_0
-    - r-spatstat.univar >=3.0_0
-    - r-spatstat.utils >=3.1.0
+    - r-spatstat.geom >=3.3_6
+    - r-spatstat.univar >=3.1
+    - r-spatstat.utils >=3.1_2
   run:
     - r-base
     - r-spatstat.data >=3.1
-    - r-spatstat.geom >=3.3_0
-    - r-spatstat.univar >=3.0_0
-    - r-spatstat.utils >=3.1.0
+    - r-spatstat.geom >=3.3_6
+    - r-spatstat.univar >=3.1
+    - r-spatstat.utils >=3.1_2
 
 test:
   commands:
