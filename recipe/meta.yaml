@@ -42,13 +42,13 @@ requirements:
   host:
     - r-base
     - r-spatstat.data >=3.1
-    - r-spatstat.geom >=3.3_6
+    - r-spatstat.geom >=3.5_0
     - r-spatstat.univar >=3.1
     - r-spatstat.utils >=3.1_4
   run:
     - r-base
     - r-spatstat.data >=3.1
-    - r-spatstat.geom >=3.3_6
+    - r-spatstat.geom >=3.5_0
     - r-spatstat.univar >=3.1
     - r-spatstat.utils >=3.1_4
 
