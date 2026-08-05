@@ -1,4 +1,4 @@
-{% set version = "3.4-5" %}
+{% set version = "3.5-1" %}
 {% set posix = 'm2-' if win else '' %}
 
 package:
@@ -9,7 +9,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/spatstat.random_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/spatstat.random/spatstat.random_{{ version }}.tar.gz
-  sha256: 09e515df70467563ed26da9f90fd6bd0813b1f9a91d453cbcfeb235b02147e52
+  sha256: 7d2679f8d0b68d197b97fb5b095dc987ee56deae769b0410aed8200e19abee1b
 
 build:
   number: 0
@@ -26,6 +26,7 @@ requirements:
     - cross-r-base {{ r_base }}    # [build_platform != target_platform]
     - r-spatstat.data              # [build_platform != target_platform]
     - r-spatstat.geom              # [build_platform != target_platform]
+    - r-spatstat.sparse            # [build_platform != target_platform]
     - r-spatstat.univar            # [build_platform != target_platform]
     - r-spatstat.utils             # [build_platform != target_platform]
     - {{ compiler('c') }}          # [not win]
@@ -41,16 +42,20 @@ requirements:
     - {{ posix }}zip               # [win]
   host:
     - r-base
+    - r-matrix
     - r-spatstat.data >=3.1_9
-    - r-spatstat.geom >=3.7_0
-    - r-spatstat.univar >=3.1_6
-    - r-spatstat.utils >=3.2_1
+    - r-spatstat.geom >=3.8_2
+    - r-spatstat.sparse >=3.2_0
+    - r-spatstat.univar >=3.2_0
+    - r-spatstat.utils >=3.2_4
   run:
     - r-base
+    - r-matrix
     - r-spatstat.data >=3.1_9
-    - r-spatstat.geom >=3.7_0
-    - r-spatstat.univar >=3.1_6
-    - r-spatstat.utils >=3.2_1
+    - r-spatstat.geom >=3.8_2
+    - r-spatstat.sparse >=3.2_0
+    - r-spatstat.univar >=3.2_0
+    - r-spatstat.utils >=3.2_4
 
 test:
   commands:
